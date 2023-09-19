@@ -16,7 +16,7 @@ namespace LeaveManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LeavesForm());
+            Application.Run(new CategoriesForm());
         }
     }
 }
