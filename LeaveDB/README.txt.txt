@@ -1,0 +1,1 @@
+https://www.c-sharpcorner.com/UploadFile/919746/how-to-export-sql-server-database-as-an-mdf-file/
