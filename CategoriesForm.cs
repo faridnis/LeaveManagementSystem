@@ -47,12 +47,67 @@ namespace LeaveManagementSystem
                     Con.SetData(Query);
                     ShowCategories();
                     txtCatName.Text = "";
+                    MessageBox.Show("Category added!");
                 }
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        int Key = 0;
+        private void CategoriesList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtCatName.Text = CategoriesList.SelectedRows[0].Cells[1].Value.ToString();
+            if (txtCatName.Text == "")
+            {
+                Key = 0;
+            }
+            else
+            {
+                Key = Convert.ToInt32(CategoriesList.SelectedRows[0].Cells[0].Value.ToString());
+            }
+        }
+
+        private void btnEditCategories_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtCatName.Text == "")
+                {
+                    MessageBox.Show("Missing Data!");
+                }
+                else
+                {
+                    string Category = txtCatName.Text;
+                    string Query = "UPDATE CategoryTb SET CatName = '{0}' WHERE CatId = '{1}'";
+                    Query = string.Format(Query, Category, Key);
+                    Con.SetData(Query);
+                    ShowCategories();
+                    txtCatName.Text = "";
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void btnDeleteCategories_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string Category = btnDeleteCategories.Click;
+                string Query = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
             }
         }
     }

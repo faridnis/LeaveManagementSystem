@@ -112,6 +112,7 @@
             this.btnDeleteCategories.TabIndex = 54;
             this.btnDeleteCategories.Text = "Delete";
             this.btnDeleteCategories.UseVisualStyleBackColor = true;
+            this.btnDeleteCategories.Click += new System.EventHandler(this.btnDeleteCategories_Click);
             // 
             // btnEditCategories
             // 
@@ -121,6 +122,7 @@
             this.btnEditCategories.TabIndex = 52;
             this.btnEditCategories.Text = "Edit";
             this.btnEditCategories.UseVisualStyleBackColor = true;
+            this.btnEditCategories.Click += new System.EventHandler(this.btnEditCategories_Click);
             // 
             // label3
             // 
@@ -167,9 +169,13 @@
             // 
             // CategoriesList
             // 
+            this.CategoriesList.AllowUserToAddRows = false;
+            this.CategoriesList.AllowUserToDeleteRows = false;
+            this.CategoriesList.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.CategoriesList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CategoriesList.Location = new System.Drawing.Point(222, 300);
             this.CategoriesList.Name = "CategoriesList";
+            this.CategoriesList.ReadOnly = true;
             this.CategoriesList.RowHeadersWidth = 51;
             this.CategoriesList.RowTemplate.Height = 24;
             this.CategoriesList.Size = new System.Drawing.Size(979, 354);
